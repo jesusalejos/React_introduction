@@ -1,5 +1,5 @@
 {
-  "name": "curso-intro-react",
+  "name": "React_introduction",
   "version": "1.0.0",
   "description": "Empty project.",
   "main": "index.js",
@@ -11,13 +11,16 @@
     "start": "webpack-dev-server --config webpack.config.dev.js",
     "dev": "webpack --config webpack.config.dev.js",
     "build-prod": "webpack --config webpack.config.js",
-    "predeploy": "npm run build-prod",//use of the pre
+    "buld2": "react scripts build",
+    "predeploy": "npm run build-prod",
     "deploy": "gh-pages -d build"
   },
+
   "dependencies": {
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
+
   "devDependencies": {
     "@babel/core": "^7.19.0",
     "@babel/preset-env": "^7.19.0",
@@ -39,5 +42,6 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.0"
   },
-  "homepage": "htpps://jesusalejos.github.io/React_introduction"
+
+  "homepage": "https://jesusalejos.github.io/React_introduction"
 }

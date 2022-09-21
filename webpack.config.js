@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const CopyPlugin = require('copy-webpack-plugin');
+//const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -11,6 +11,7 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js'
   },
+  mode: 'production',
   module: {
     rules: [
       {
@@ -44,14 +45,17 @@ const config = {
     ]
   },
   plugins: [
-    new CopyPlugin({
-      patterns: [{ from: 'src/index.html' }],
-    }),
+//    new CopyPlugin({
+  //    patterns: [{ from: 'src/index.html' }],
+    //}),
     new HtmlWebpackPlugin({
-      templateContent: ({ htmlWebpackPlugin }) => '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>' + htmlWebpackPlugin.options.title + '</title></head><body><div id=\"app\"></div></body></html>',
+      template: './public/index.html',
       filename: 'index.html',
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename:'styles/[name].[contenthash].css'
+    }),
+    
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       openAnalyzer: false,
