@@ -9,7 +9,8 @@ const config = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js'
+    filename: 'index.js',
+    //filename: '[name].[contenthash].js'
   },
   mode: 'production',
   module: {
@@ -53,9 +54,10 @@ const config = {
       filename: 'index.html',
     }),
     new MiniCssExtractPlugin({
-      filename:'styles/[name].[contenthash].css'
+      filename:'styles/styles.css'
+//      filename:'styles/[name].[contenthash].css'
     }),
-    
+
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       openAnalyzer: false,
@@ -68,18 +70,18 @@ const config = {
       '.js'
     ]
   },
-  optimization: {
-    runtimeChunk: 'single',
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all'
-        }
-      }
-    }
-  }
+  //optimization: {
+    //runtimeChunk: 'single',
+    //splitChunks: {
+      //cacheGroups: {
+        //vendor: {
+          //test: /[\\/]node_modules[\\/]/,
+          //name: 'vendors',
+          ///chunks: 'all'
+        //}
+      //}
+    //}
+  //}
 };
 
 module.exports = config;
