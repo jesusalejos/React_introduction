@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # curo-intro-react
 
 Empty project.
@@ -29,3 +30,7 @@ Open the file `dist/index.html` in your browser
 ## Credits
 
 Made with [createapp.dev](https://createapp.dev/)
+=======
+# React_introduction
+Course_Platzi
+>>>>>>> 6ffb114268bc0ba3dedad5221acdea5999fac4c3
