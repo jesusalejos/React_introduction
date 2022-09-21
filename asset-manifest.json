@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/React_introduction/static/css/main.c8cc3002.css",
+    "main.js": "/React_introduction/static/js/main.83c8234c.js",
+    "index.html": "/React_introduction/index.html",
+    "main.c8cc3002.css.map": "/React_introduction/static/css/main.c8cc3002.css.map",
+    "main.83c8234c.js.map": "/React_introduction/static/js/main.83c8234c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c8cc3002.css",
+    "static/js/main.83c8234c.js"
+  ]
+}
