@@ -1,8 +1,6 @@
 import * as React from 'react';
 import {useLocalStorage} from "./useLocalStorage"
 
-
-
 interface SelectedContextType  {
   
   loading: boolean | any
@@ -20,27 +18,13 @@ interface SelectedContextType  {
  
 }
 
-//Type 'Dispatch<SetStateAction<boolean>>' is not assignable to type 'boolean'.
-//React.Dispatch<React.SetStateAction<boolean>>
-
-
-
-export interface Task {
+interface Task {
 
   text: string,
   completed: boolean
 }
 
-interface Props {
-  children: React.ReactNode; //it was the solution.
-
-}
-
-export const TodoContext= React.createContext({} as SelectedContextType) //this as is important
-
-
-
-export function TodoProvider ({children}: Props) {
+export function useTodos (): SelectedContextType {
    const {item: todos, 
    saveItem: saveTodos,
    loading,error
@@ -98,8 +82,7 @@ const deleteTodo = (text: string) => {
 }
 
 
- return (
-   <TodoContext.Provider value ={{
+ return {
 
       loading,
       error,
@@ -113,8 +96,6 @@ const deleteTodo = (text: string) => {
       deleteTodo,
       openModal,
       setOpenModal,
-    }}>
-      {children}
-    </TodoContext.Provider>
-   ); 
-};
+    }
+   
+}

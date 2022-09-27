@@ -5,11 +5,11 @@ interface Props {
 	children: JSX.Element | JSX.Element[]; //it was the solution.
 }
 
-export function TodoList(props: Props){
+export function TodoList({children}: Props){
     return(
         <section>
             <ul>
-                {props.children}
+                {children}
             </ul>
         </section>
     );

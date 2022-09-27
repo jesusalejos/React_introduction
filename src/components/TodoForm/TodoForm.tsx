@@ -1,13 +1,15 @@
 import * as React from 'react';
-import { TodoContext } from '../TodoContext/TodoContext';
 import './TodoForm.css';
 
-export function TodoForm() {
+interface Props {
+  addTodo: (text: string) => void
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>
+
+}
+
+export function TodoForm ({addTodo, setOpenModal}: Props) {
   const [newTodoValue, setNewTodoValue] = React.useState('');
-  const {
-    addTodo,
-    setOpenModal,
-  } = React.useContext(TodoContext);
+  
   // Parameter 'event' implicitly has an 'any' type.
 
 

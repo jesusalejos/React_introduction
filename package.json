@@ -2,6 +2,7 @@
   "name": "React_introduction",
   "version": "1.0.0",
   "description": "Empty project.",
+  "private": true,
   "main": "index.js",
   "keywords": [],
   "author": "",
@@ -11,8 +12,8 @@
     "start": "webpack-dev-server --config webpack.config.dev.js",
     "dev": "webpack --config webpack.config.dev.js",
     "build-prod": "webpack --config webpack.config.js",
-    "buld2": "react scripts build",
-    "predeploy": "npm run build-prod",
+    "build2": "react-scripts build",
+    "predeploy": "npm run build2",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
@@ -31,6 +32,7 @@
     "gh-pages": "4.0.0",
     "html-webpack-plugin": "5.5.0",
     "mini-css-extract-plugin": "2.6.1",
+    "react-scripts": "5.0.1",
     "style-loader": "3.3.1",
     "ts-loader": "9.3.1",
     "typescript": "4.8.2",
@@ -40,5 +42,17 @@
     "webpack-cli": "4.10.0",
     "webpack-dev-server": "4.11.0"
   },
-  "homepage": "https://jesusalejos.github.io/React_introduction"
+  "homepage": "https://jesusalejos.github.io/React_introduction",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
