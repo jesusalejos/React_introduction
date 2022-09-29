@@ -1,6 +1,5 @@
 import * as React from 'react';
 import "./CreateTodoButtom.css"
-import {TodoContext} from "../TodoContext/TodoContext"
 
 interface Props {
 	setOpenModal: React.Dispatch<React.SetStateAction<boolean>>

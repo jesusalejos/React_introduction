@@ -29,7 +29,7 @@ export function TodoForm ({addTodo, setOpenModal}: Props) {
 
   return (
     <form onSubmit={onSubmit}>
-      <label>Escribe tu nuevo TODO</label>
+      <label>Escribe tu nueva tarea...</label>
       <textarea
         value={newTodoValue}
         onChange={onChange}

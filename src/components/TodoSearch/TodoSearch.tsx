@@ -5,10 +5,11 @@ import "./TodoSearch.css"
 interface Props {
     searchValue: string
     setSearchValue: React.Dispatch<React.SetStateAction<string>>
+    loading?: boolean | any
 
 }
 
-export function TodoSearch({searchValue, setSearchValue}: Props){
+export function TodoSearch({searchValue, setSearchValue, loading}: Props){
 	
 //Aquí en las props usamos un estilo más desordenado para tener en cuenta que es otra forma
 
@@ -23,8 +24,9 @@ export function TodoSearch({searchValue, setSearchValue}: Props){
         placeholder="Write here..." 
         className="TodoSearch"
         value={searchValue}
-        onChange={onSearchValueChange}/>
-        
+        onChange={onSearchValueChange}
+        disabled={loading}
+        />
         </>
     );
 }

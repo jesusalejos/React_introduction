@@ -17,8 +17,7 @@ export function TodoItem(props: Props){
     return(
         <li className="TodoItem">
             <span className={`Icon Icon-check ${completed && 'Icon-check--active' }`} 
-            onClick={onComplete}>
-            
+            onClick={onComplete}>          
             √
             </span>
             <p className= {`TodoItem-p ${completed && 'TodoItem-p--completed'}`}>
