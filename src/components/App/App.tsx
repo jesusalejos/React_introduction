@@ -13,7 +13,9 @@ import {useTodos} from "./useTodo"
 import {TodosError} from "../TodosError/TodosError"
 import {TodosLoading} from "../TodosLoading/TodosLoading"
 import {EmptyTodos} from "../EmptyTodos/EmptyTodos"
-import { ChangeAlertWithStorageListener } from '../changeAlert/changeAlert';
+import  {ChangeAlert} from "../changeAlert/changeAlert"
+
+
 
 interface Task {
 
@@ -113,7 +115,7 @@ const {
      	setOpenModal={setOpenModal}
      />
 
-    <ChangeAlertWithStorageListener
+    <ChangeAlert
 
         sincronize={sincronizeTodos}
     />
