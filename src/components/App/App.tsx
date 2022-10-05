@@ -13,6 +13,7 @@ import {useTodos} from "./useTodo"
 import {TodosError} from "../TodosError/TodosError"
 import {TodosLoading} from "../TodosLoading/TodosLoading"
 import {EmptyTodos} from "../EmptyTodos/EmptyTodos"
+import { ChangeAlertWithStorageListener } from '../changeAlert/changeAlert';
 
 interface Task {
 
@@ -36,6 +37,7 @@ const {
         searchValue, 
         setSearchValue,
         addTodo,
+        sincronizeTodos
      } = useTodos()
 
     return (
@@ -110,6 +112,11 @@ const {
      <CreateTodoButtom 
      	setOpenModal={setOpenModal}
      />
+
+    <ChangeAlertWithStorageListener
+
+        sincronize={sincronizeTodos}
+    />
 
      </>
     )

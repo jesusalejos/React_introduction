@@ -4,6 +4,7 @@ let parsedItem: any;
 
 export function useLocalStorage(itemName: string, initialValue: any){ //custom hooks = se hizo así para que sea universal,(por eso muchos :any)
 
+const [sincronizedItem, setsincronizedItem]= React.useState(true);
 const [error, setError]= React.useState(false);
 const [loading, setLoading]= React.useState(true);
 const [item, setItem] = React.useState(initialValue);//super importante el uso de useState
@@ -24,6 +25,7 @@ React.useEffect(()=> {
 
   setItem(parsedItem);
   setLoading(false);
+  setsincronizedItem(true)
 
 
   } 
@@ -33,7 +35,7 @@ React.useEffect(()=> {
     
     
   }
-},3000),[]    
+},3000),[sincronizedItem]    
   
 
 });
@@ -49,11 +51,17 @@ const saveItem = (newItem: any) => {
   }
 };
 
+const sincronizeItem = ()=> {
+  setLoading(true)
+  setsincronizedItem(false)
+}
+
 return {
   item,
   saveItem, 
   loading, 
   error,
+  sincronizeItem,
 };
  
 }

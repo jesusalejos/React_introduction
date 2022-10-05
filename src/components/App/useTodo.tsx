@@ -15,9 +15,11 @@ interface SelectedContextType  {
   deleteTodo: (text: string)=> void
   openModal: boolean
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>
+  //sincronizeItem: ()=> void
+  sincronizeTodos: ()=> void
  
 }
-
+ 
 interface Task {
 
   text: string,
@@ -27,9 +29,11 @@ interface Task {
 export function useTodos (): SelectedContextType {
    const {item: todos, 
    saveItem: saveTodos,
+   sincronizeItem: sincronizeTodos,
    loading,error
   }: {item:Task[],
      saveItem: React.Dispatch<React.SetStateAction<Task[]>>, 
+     sincronizeItem: ()=> void
      loading: boolean,
      error: boolean} = useLocalStorage("TODOS_V1", []) //si fuera array ponemos as... repetimos datos (creo)
 //const [name, saveName] = useLocalStorage("PRUEBA_V1", "prueba"); //es decir, el custom hooks nos sirve para todo, es abstraer una lógica
@@ -96,6 +100,7 @@ const deleteTodo = (text: string) => {
       deleteTodo,
       openModal,
       setOpenModal,
+      sincronizeTodos
     }
    
 }

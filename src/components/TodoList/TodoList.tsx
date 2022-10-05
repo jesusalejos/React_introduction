@@ -36,11 +36,16 @@ export function TodoList({error,
     return(
         <section>
         {error && onError()}
+
         {loading && onLoading()}
+
         {(!loading && !totalTodos)&& onEmptyTodos()}
-        {searchedTodos.map(todo=> render(todo))}        
+        
           {/*{searchedTodos.map(todo=> children(todo))} // for renderFunction*/ }
+
         {(totalTodos && !searchedTodos.length) && onEmptySearchResults(searchText)}
+
+        {(!loading && !error) && searchedTodos.map (todo=> render(todo))}
         
          </section>
     );
